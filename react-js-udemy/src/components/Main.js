@@ -15,32 +15,27 @@ export default class Main extends Component {
   };
 
   // É executado assim que o componente for montado: retorna os valores do localstorage
-  componentDidMount(){
-    const tarefas = JSON.parse(localStorage.getItem('tarefas'))
+  componentDidMount() {
+    const tarefas = JSON.parse(localStorage.getItem("tarefas"));
 
-    if(!tarefas) return;
+    if (!tarefas) return;
 
     // Retorna a lista salva no localstorage
-    this.setState({tarefas})
-
+    this.setState({ tarefas });
   }
 
-
   // Retorna o valor atualizado
-  componentDidUpdate(prevProps, prevState){
-
+  componentDidUpdate(prevProps, prevState) {
     // Pegando as tarefas
     const { tarefas } = this.state;
 
     // Conferindo se as tarefas são iguais não retorna nada
-    if(tarefas === prevState.tarefas) return;
-
+    if (tarefas === prevState.tarefas) return;
 
     //console.log("Tarefas mudaram", tarefas)
 
     // Salvando no navegador
-    localStorage.setItem('tarefas', JSON.stringify(tarefas))
-
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
   }
 
   handleChange = (e) => {
