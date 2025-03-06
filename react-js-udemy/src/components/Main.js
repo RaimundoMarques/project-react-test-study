@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import ResponsiveComponent from "./ResponsiveComponent";
 
 // Form
 import { FaPlus, FaWindowClose, FaEdit } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 
 import "./Main.css";
-import { TbChisel } from "react-icons/tb";
 
 export default class Main extends Component {
   state = {
@@ -108,40 +108,47 @@ export default class Main extends Component {
     const { novaTarefa, tarefas } = this.state;
 
     return (
-      <div className="main">
-        <h1 className="title">Lista de tarefas</h1>
+      <>
+        <ResponsiveComponent />
+        <div className="main">
+          <h1 className="title">Lista de tarefas</h1>
 
-        <form onSubmit={this.handleSubmit} action="#" className="form">
-          <input onChange={this.handleChange} type="text" value={novaTarefa} />
-          <button type="submit">
-            <FaPlus />
-          </button>
-
-          {novaTarefa.length > 0 && (
-            <button type="button" onClick={this.clearButton}>
-              <FaMinus />
+          <form onSubmit={this.handleSubmit} action="#" className="form">
+            <input
+              onChange={this.handleChange}
+              type="text"
+              value={novaTarefa}
+            />
+            <button type="submit">
+              <FaPlus />
             </button>
-          )}
-        </form>
 
-        <ul className="tarefas">
-          {tarefas.map((tarefa, index) => (
-            <li key={tarefa}>
-              <span>{tarefa}</span>
-              <span>
-                <FaEdit
-                  onClick={(e) => this.handleEdit(e, index)}
-                  className="edit"
-                />
-                <FaWindowClose
-                  onClick={(e) => this.handleDelete(e, index)}
-                  className="delete"
-                />
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+            {novaTarefa.length > 0 && (
+              <button type="button" onClick={this.clearButton}>
+                <FaMinus />
+              </button>
+            )}
+          </form>
+
+          <ul className="tarefas">
+            {tarefas.map((tarefa, index) => (
+              <li key={tarefa}>
+                <span>{tarefa}</span>
+                <span>
+                  <FaEdit
+                    onClick={(e) => this.handleEdit(e, index)}
+                    className="edit"
+                  />
+                  <FaWindowClose
+                    onClick={(e) => this.handleDelete(e, index)}
+                    className="delete"
+                  />
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
     );
   }
 }

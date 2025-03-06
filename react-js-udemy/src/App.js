@@ -8,10 +8,9 @@ import './App.css'
 export default function App(){
     return (
     <div>
-      <h1 className="title-app">Hello Wolrd!</h1>
+      <h1 className="title-app">React Study!</h1>
       {/* retorna um componente */}
       <Main />
     </div>
-
   )
 }
