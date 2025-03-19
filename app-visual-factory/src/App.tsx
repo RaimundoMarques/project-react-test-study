@@ -1,5 +1,5 @@
 import "./App.css";
-import { ProjectFactory } from "./assets/components/ProjectFactory";
+import { ProjectFactory } from "./components/ProjectFactory";
 
 function App() {
   return (
