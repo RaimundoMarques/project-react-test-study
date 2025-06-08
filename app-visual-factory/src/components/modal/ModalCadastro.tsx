@@ -40,7 +40,7 @@ export const ModalCadastro: React.FC<ModalProps> = ({
         }}
         onClick={(e) => e.stopPropagation()} // Evita fechar ao clicar dentro do modal
       >
-        <h2 style={{ background: "transparent" }}>Cadastro</h2>
+        <h2 style={{ background: "transparent" }}>Cadastro View</h2>
         <p style={{ background: "transparent" }}>
           Preencha os dados e continue
         </p>
