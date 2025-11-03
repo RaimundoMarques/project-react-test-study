@@ -1,12 +1,8 @@
 import "./App.css";
-import { ProjectFactory } from "./assets/components/ProjectFactory";
+import { Layouts } from "./assets/layouts/Layouts";
 
 function App() {
-  return (
-    <>
-      <ProjectFactory />
-    </>
-  );
+  return <Layouts/>
 }
 
 export default App;
